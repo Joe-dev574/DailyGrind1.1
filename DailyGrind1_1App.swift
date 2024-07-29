@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 @main
 struct DailyGrind1_1App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WorkoutListView()
         }
+        .modelContainer(for: DailyWorkout.self)
+    }
+    
+    init( ) {
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }
